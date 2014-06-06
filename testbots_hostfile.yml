@@ -1,0 +1,10 @@
+---
+
+- hosts: testbots
+
+  tasks:
+    - name: copy hostfile
+      copy: src=/etc/hosts dest=/etc/hosts
+
+    - name: tail host file
+      shell: tail -5 /etc/hosts

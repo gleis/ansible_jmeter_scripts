@@ -1,0 +1,14 @@
+---
+
+- hosts: testbots
+
+  tasks:
+    - name: copy hostname script
+      copy: src=/etc/ansible/sethostname.sh dest=/usr/bin/sethostname.sh
+
+    - name: set perms
+      file: path=/usr/bin/sethostname.sh owner=root mode=0755
+      #acl: name=/usr/bin/sethostname.sh entity=root permissions=rwx state=present
+        
+    - name: run hostname script
+      shell: /usr/bin/sethostname.sh

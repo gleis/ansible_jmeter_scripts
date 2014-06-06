@@ -1,0 +1,14 @@
+---
+
+- hosts: testbots
+
+  tasks:
+    - name: copy limits script
+      copy: src=/etc/ansible/setlimits.sh dest=/usr/bin/setlimits.sh
+
+    - name: set perms
+      file: path=/usr/bin/setlimits.sh owner=root mode=0755
+      #acl: name=/usr/bin/sethostname.sh entity=root permissions=rwx state=present
+        
+    - name: run limits script
+      shell: /usr/bin/setlimits.sh

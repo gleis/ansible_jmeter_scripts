@@ -1,0 +1,10 @@
+---
+
+- hosts: testbots
+
+  tasks:
+    - name: make sure dstat installed
+      apt: name=dstat state=present
+
+    - name: show it installed
+      shell: rpm -qa | grep dstat
