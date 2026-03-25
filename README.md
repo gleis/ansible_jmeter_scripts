@@ -1,3 +1,5 @@
+# OLD and no longer maintained
+
 # ansible_jmeter_scripts
 
 Small Ansible playbooks and helper scripts for preparing a `testbots` host group used for JMeter-style load test workers.
